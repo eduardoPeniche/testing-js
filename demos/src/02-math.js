@@ -23,9 +23,27 @@ function average(values) {
   return values.reduce((sum, value) => sum + value, 0) / values.length;
 }
 
+function subtract(a, b) {
+  return a - b;
+}
+
+function isEven(value) {
+  return value % 2 === 0;
+}
+
+function max(values) {
+  if (values.length === 0) {
+    return null;
+  }
+  return Math.max(...values);
+}
+
 module.exports = {
   sum,
   multiply,
   divide,
-  average
+  average,
+  subtract,
+  isEven,
+  max
 };

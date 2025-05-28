@@ -1,4 +1,4 @@
-const { sum, multiply, divide, average } = require('./02-math');
+const { sum, multiply, divide, average, subtract, isEven, max } = require('./02-math');
 
 test("add 1 + 3 should be 4", () => {
   const result = sum(1, 3);
@@ -28,5 +28,28 @@ test("should average of 3, 7, 11", () => {
   const result = average(values);
   expect(result).toBe(7);
   const result2 = average([]);
+  expect(result2).toBe(null);
+});
+
+test("should subtract", () => {
+  const result = subtract(10, 3);
+  expect(result).toBe(7);
+  const result2 = subtract(3, 10);
+  expect(result2).toBe(-7);
+});
+
+test("check if number is even", () => {
+  const result = isEven(10);
+  expect(result).toBe(true);
+  const result2 = isEven(3);
+  expect(result2).toBe(false);
+  const result3 = isEven(0);
+  expect(result3).toBe(true);
+});
+
+test("find max value in array", () => {
+  const result = max([4, 8, 1]);
+  expect(result).toBe(8);
+  const result2 = max([]);
   expect(result2).toBe(null);
 });
